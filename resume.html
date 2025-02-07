@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - {{ resume.name }}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .resume-container {
+            width: 60%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 26px;
+            margin: 0;
+        }
+        p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        section {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+        h2 {
+            font-size: 18px;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 5px;
+            margin-bottom: 8px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            background: #ff9500;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #e08900;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header>
+            <h1>{{ resume.name }}</h1>
+            <p>Email: {{ resume.email }} | Phone: {{ resume.phone }}</p>
+            <p>Address: {{ resume.address }}</p>
+        </header>
+
+        <section>
+            <h2>Objective</h2>
+            <p>{{ resume.objective }}</p>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <p>{{ resume.education }}</p>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <p>{{ resume.experience }}</p>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <p>{{ resume.skills }}</p>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <p>{{ resume.projects }}</p>
+        </section>
+
+        <section>
+            <h2>References</h2>
+            <p>{{ resume.references }}</p>
+        </section>
+
+        <footer>
+            <a href="{{ url_for('download_resume', resume_id=resume.id) }}" class="btn">Download PDF</a>
+        </footer>
+    </div>
+</body>
+</html>

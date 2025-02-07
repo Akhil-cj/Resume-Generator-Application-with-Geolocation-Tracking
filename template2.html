@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #1c1c1c, #383838);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .resume-container {
+            display: flex;
+            width: 70%;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .left-column {
+            width: 35%;
+            background: #2c3e50;
+            padding: 30px;
+            text-align: center;
+        }
+        .left-column h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #f39c12;
+        }
+        .left-column p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .left-column h2 {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #f39c12;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 5px;
+        }
+        .right-column {
+            width: 65%;
+            padding: 30px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #f1c40f;
+            border-bottom: 2px solid #f1c40f;
+            padding-bottom: 5px;
+            margin-top: 15px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px;
+            border-radius: 5px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="left-column">
+            <h1>{{ resume.name }}</h1>
+            <p><strong>Email:</strong> {{ resume.email }}</p>
+            <p><strong>Phone:</strong> {{ resume.phone }}</p>
+            <p><strong>Address:</strong> {{ resume.address }}</p>
+            <h2>Skills</h2>
+            <p>{{ resume.skills }}</p>
+        </div>
+        <div class="right-column">
+            <h2>Objective</h2>
+            <p>{{ resume.objective }}</p>
+            <h2>Education</h2>
+            <p>{{ resume.education }}</p>
+            <h2>Work Experience</h2>
+            <p>{{ resume.experience }}</p>
+            <h2>Projects</h2>
+            <p>{{ resume.projects }}</p>
+            <h2>References</h2>
+            <p>{{ resume.references }}</p>
+        </div>
+    </div>
+</body>
+</html>

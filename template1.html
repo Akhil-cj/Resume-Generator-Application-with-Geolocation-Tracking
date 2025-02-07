@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #141E30, #243B55);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .resume-container {
+            width: 60%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #fff;
+        }
+        h1 {
+            font-size: 28px;
+            margin: 0;
+            color: #f39c12;
+        }
+        .contact-info {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        section {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+        h2 {
+            font-size: 20px;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 5px;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .timeline-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 3px solid #f39c12;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #f39c12;
+            border-radius: 50%;
+            position: absolute;
+            left: -6px;
+            top: 5px;
+        }
+        .date {
+            font-weight: bold;
+            color: #f1c40f;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: rgba(255, 255, 255, 0.2);
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="header">
+            <h1>{{ resume.name }}</h1>
+            <div class="contact-info">
+                <p><strong>Address:</strong> {{ resume.address }}</p>
+                <p><strong>Phone:</strong> {{ resume.phone }}</p>
+                <p><strong>Email:</strong> {{ resume.email }}</p>
+            </div>
+        </div>
+        <div class="content">
+            <section class="summary">
+                <h2>Summary</h2>
+                <p>{{ resume.objective }}</p>
+            </section>
+            <section class="experience">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    {% if resume.experience %}
+                        {% for exp in resume.experience %}
+                            <div class="timeline-item">
+                                <p class="date">{{ exp.date }}</p>
+                                <div>
+                                    <h3>{{ exp.position }}</h3>
+                                    <p>{{ exp.details }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No experience available</p>
+                    {% endif %}
+                </div>
+            </section>
+            <section class="education">
+                <h2>Education</h2>
+                <p>{{ resume.education }}</p>
+            </section>
+            <section class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    {% for skill in resume.skills %}
+                        <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <section class="projects">
+                <h2>Projects</h2>
+                <p>{{ resume.projects }}</p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

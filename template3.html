@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #141E30, #243B55);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .resume-container {
+            width: 60%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f39c12;
+        }
+        h1 {
+            font-size: 28px;
+            margin: 0;
+            color: #f39c12;
+        }
+        header p {
+            font-size: 16px;
+            margin-top: 5px;
+            color: #f1c40f;
+        }
+
+        /* Section Styling */
+        section {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+        h2 {
+            font-size: 22px;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 5px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header>
+            <h1>{{ resume.name }}</h1>
+            <p>{{ resume.email }} | {{ resume.phone }} | {{ resume.address }}</p>
+        </header>
+        <section>
+            <h2>Objective</h2>
+            <p>{{ resume.objective }}</p>
+        </section>
+        <section>
+            <h2>Education</h2>
+            <p>{{ resume.education }}</p>
+        </section>
+        <section>
+            <h2>Work Experience</h2>
+            <p>{{ resume.experience }}</p>
+        </section>
+        <section>
+            <h2>Skills</h2>
+            <p>{{ resume.skills }}</p>
+        </section>
+        <section>
+            <h2>Projects</h2>
+            <p>{{ resume.projects }}</p>
+        </section>
+        <section>
+            <h2>References</h2>
+            <p>{{ resume.references }}</p>
+        </section>
+    </div>
+</body>
+</html>
