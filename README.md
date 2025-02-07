@@ -75,3 +75,32 @@ Fetches user location based on IP.
 API response is processed in backend/utils.py.
 
 Requires an active IPStack API key.
+
+
+
+order of the files to be placed before run the program
+    resumeeee/
+        backend/
+            app.py
+            config.py
+            database.py
+            forms.py
+            models.py
+            resume_generator.py
+            utils.py
+            resume_pdfs/
+            static/
+                css/
+                    styles.css
+                js/
+                    script.js
+            templates/
+                404.html
+                index.html
+                resume.html
+                template1.html
+                template2.html
+                template3.html
+            __pycache__/
+        migrations/
+
